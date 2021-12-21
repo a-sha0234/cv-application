@@ -37,9 +37,9 @@ export default function General() {
   };
 
   return (
-    <div>
+    <div className="general">
       <form>
-        <div className="wrapper" style={style}>
+        <div style={style}>
           <TextField
             color="primary"
             focused
