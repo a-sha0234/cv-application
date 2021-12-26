@@ -10,6 +10,7 @@ function App() {
   const [education, setEducation] = React.useState([]);
 
   function addEducationInfo() {
+    //called when add is clicked
     setEducation((prev) => {
       return [
         ...prev,
@@ -30,10 +31,12 @@ function App() {
     <main>
       <div>
         <General />
-        <h1>Education</h1>
-        <Button variant="outlined" size="large" onClick={addEducationInfo}>
-          Add
-        </Button>
+        <div className="education-header">
+          <h1>Education</h1>
+          <Button variant="outlined" size="large" onClick={addEducationInfo}>
+            Add
+          </Button>
+        </div>
         {educationComp}
 
         <h1>Experience</h1>

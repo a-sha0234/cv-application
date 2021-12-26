@@ -13,3 +13,19 @@
   justify-content: center;
   margin-top: 5%;
 }
+
+.education-card {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+
+  &-left-fields {
+    margin-bottom: 3%;
+  }
+}
+
+.education-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
