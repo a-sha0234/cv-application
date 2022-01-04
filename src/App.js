@@ -4,28 +4,39 @@ import Experience from "./components/Experience";
 import Button from "@mui/material/Button";
 import "./style/style.scss";
 import React from "react";
-import { nanoid } from "nanoid";
 
 function App() {
-  const [education, setEducation] = React.useState([]);
+  //----------------------------------------------------------------------------------------------------------
+  //handle education component
+  const [education, setEducation] = React.useState([]); //state to work out how many components to render
 
   function addEducationInfo() {
     //called when add is clicked
     setEducation((prev) => {
-      return [
-        ...prev,
-        {
-          key: nanoid(),
-        },
-      ];
+      return [...prev, {}];
     });
   }
 
-  console.log(education);
-
   const educationComp = education.map((num) => {
-    return <Education id={num.key} />;
+    //map over array and render the component for education section
+    return <Education />;
   });
+  //----------------------------------------------------------------------------------------------------------
+  //handle expierence component
+
+  const [expierence, setExperience] = React.useState([]);
+
+  function addExperiance() {
+    setExperience((prev) => {
+      return [...prev, {}];
+    });
+  }
+
+  const expierenceComp = expierence.map((num) => {
+    return <Experience />;
+  });
+
+  //----------------------------------------------------------------------------------------------------------
 
   return (
     <main>
@@ -40,9 +51,10 @@ function App() {
         {educationComp}
 
         <h1>Experience</h1>
-        <Button variant="outlined" size="large">
+        <Button variant="outlined" size="large" onClick={addExperiance}>
           Add
         </Button>
+        {expierenceComp}
       </div>
     </main>
   );

@@ -41,7 +41,7 @@ export default function Education() {
     <div className="education-card">
       <form>
         <div style={hideStyle}>
-          <div className="education-card-left-fields">
+          <div className="education-card-top-fields">
             <TextField
               color="primary"
               focused
@@ -64,25 +64,29 @@ export default function Education() {
               value={formDataEducation.courseName}
             />
           </div>
-          <TextField
-            color="primary"
-            focused
-            label="Date started"
-            type="date"
-            name="dateStarted"
-            value={formDataEducation.dateStarted}
-            onChange={handleChange}
-            style={{ marginRight: "80px" }}
-          />
-          <TextField
-            color="primary"
-            focused
-            label="Date finished"
-            type="date"
-            name="dateFinished"
-            value={formDataEducation.dateFinished}
-            onChange={handleChange}
-          />
+
+          <div className="education-card-bottom-fields">
+            <TextField
+              color="primary"
+              focused
+              label="Date started"
+              type="date"
+              name="dateStarted"
+              value={formDataEducation.dateStarted}
+              onChange={handleChange}
+              style={{ marginRight: "110px" }}
+            />
+            <TextField
+              color="primary"
+              focused
+              label="Date finished"
+              type="date"
+              name="dateFinished"
+              value={formDataEducation.dateFinished}
+              onChange={handleChange}
+              style={{ marginRight: "80px" }}
+            />
+          </div>
         </div>
         <Button
           variant="outlined"
