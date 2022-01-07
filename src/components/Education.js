@@ -2,9 +2,30 @@
 import React from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import { handleBreakpoints } from "@mui/system";
+import Typography from "@mui/material/Typography";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
+  TextFieldTop: {
+    marginTop: 10,
+  },
+
+  textFieldBottom: {
+    marginTop: 20,
+  },
+  cvText: {
+    display: "block",
+    fontSize: 20,
+    marginTop: 10,
+  },
+  cvTextBold: {
+    fontWeight: "bold",
+  },
+});
 
 export default function Education() {
+  const classStyles = useStyles();
+
   //---------------------------------------------------------------------------------------------
   //handle form data
   //---------------------------------------------------------------------------------------------
@@ -67,7 +88,7 @@ export default function Education() {
         <div className="education-card">
           <form>
             <div style={hideStyle}>
-              <div className="education-card-top-fields">
+              <div className={classStyles.TextFieldTop}>
                 <TextField
                   color="primary"
                   focused
@@ -91,7 +112,7 @@ export default function Education() {
                 />
               </div>
 
-              <div className="education-card-bottom-fields">
+              <div className={classStyles.textFieldBottom}>
                 <TextField
                   color="primary"
                   focused
@@ -133,10 +154,34 @@ export default function Education() {
           </form>
           <section style={revealStyle}>
             {/* this section only shows when the user clicks save  */}
-            <p>School Name: {formDataEducation.schoolName}</p>
-            <p> Course Name: {formDataEducation.courseName}</p>
-            <p>Date started: {formDataEducation.dateStarted}</p>
-            <p>Date finished: {formDataEducation.dateFinished}</p>
+
+            <Typography variant="p" className={classStyles.cvText}>
+              <Typography variant="p" className={classStyles.cvTextBold}>
+                School Name:{" "}
+              </Typography>{" "}
+              {formDataEducation.schoolName}
+            </Typography>
+
+            <Typography variant="p" className={classStyles.cvText}>
+              <Typography variant="p" className={classStyles.cvTextBold}>
+                Course Name:{" "}
+              </Typography>{" "}
+              {formDataEducation.courseName}
+            </Typography>
+
+            <Typography variant="p" className={classStyles.cvText}>
+              <Typography variant="p" className={classStyles.cvTextBold}>
+                Date Started:{" "}
+              </Typography>{" "}
+              {formDataEducation.dateStarted}
+            </Typography>
+
+            <Typography variant="p" className={classStyles.cvText}>
+              <Typography variant="p" className={classStyles.cvTextBold}>
+                Date Finished:{" "}
+              </Typography>{" "}
+              {formDataEducation.dateFinished}
+            </Typography>
           </section>
         </div>
       )}

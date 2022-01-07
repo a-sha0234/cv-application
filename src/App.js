@@ -1,13 +1,17 @@
+//imports
 import General from "./components/General";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Button from "@mui/material/Button";
 import "./style/style.scss";
 import React from "react";
+import Typography from "@mui/material/Typography";
+import { makeStyles } from "@material-ui/core";
 
 function App() {
   //----------------------------------------------------------------------------------------------------------
   //handle education component
+  //----------------------------------------------------------------------------------------------------------
   const [education, setEducation] = React.useState([]); //state to work out how many components to render
 
   function addEducationInfo() {
@@ -23,6 +27,7 @@ function App() {
   });
   //----------------------------------------------------------------------------------------------------------
   //handle expierence component
+  //----------------------------------------------------------------------------------------------------------
 
   const [expierence, setExperience] = React.useState([]);
 
@@ -37,14 +42,25 @@ function App() {
   });
 
   //----------------------------------------------------------------------------------------------------------
-
+  // JSX returned, call components and export component
+  //----------------------------------------------------------------------------------------------------------
   return (
-    <main>
+    <main className="container">
       <div>
         <General />
         <div className="education-header">
-          <h1>Education</h1>
-          <Button variant="outlined" size="large" onClick={addEducationInfo}>
+          <Typography
+            variant="h1"
+            style={{ fontSize: 40, marginBottom: 20, textAlign: "center" }}
+          >
+            Education
+          </Typography>
+          <Button
+            variant="outlined"
+            size="large"
+            onClick={addEducationInfo}
+            style={{ marginBottom: 20 }}
+          >
             Add
           </Button>
         </div>

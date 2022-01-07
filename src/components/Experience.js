@@ -4,8 +4,27 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 import Typography from "@mui/material/Typography";
+import { makeStyles } from "@material-ui/core";
+import { red } from "@mui/material/colors";
+
+const useStyles = makeStyles({
+  textfieldTop: {
+    marginRight: 20,
+    marginTop: 20,
+  },
+
+  textArea: {
+    display: "block",
+    marginTop: 20,
+  },
+  type: {
+    display: "block",
+  },
+});
 
 export default function Experience() {
+  const classes = useStyles();
+
   //---------------------------------------------------------------------------------------------
   //handle form data
   //---------------------------------------------------------------------------------------------
@@ -79,6 +98,7 @@ export default function Experience() {
               name="CompanyName"
               value={formExperience.CompanyName}
               onChange={handleFormChange}
+              className={classes.textfieldTop}
             />
             <TextField
               color="primary"
@@ -89,6 +109,7 @@ export default function Experience() {
               name="positionTitle"
               value={formExperience.positionTitle}
               onChange={handleFormChange}
+              className={classes.textfieldTop}
             />
             <TextField
               color="primary"
@@ -99,6 +120,7 @@ export default function Experience() {
               name="startDate"
               value={formExperience.startDate}
               onChange={handleFormChange}
+              className={classes.textfieldTop}
             />
             <TextField
               color="primary"
@@ -109,6 +131,7 @@ export default function Experience() {
               name="endDate"
               value={formExperience.endDate}
               onChange={handleFormChange}
+              className={classes.textfieldTop}
             />
             <TextareaAutosize
               aria-label="empty textarea"
@@ -117,6 +140,7 @@ export default function Experience() {
               name=" roleDetails"
               value={formExperience.roleDetails}
               onChange={handleFormChange}
+              className={classes.textArea}
             />
           </div>
 

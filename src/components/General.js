@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 
   textFieldBottom: {
-    marginTop: 10,
+    marginTop: 20,
   },
   heading1: {
     fontSize: 30,
