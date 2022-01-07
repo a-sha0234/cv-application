@@ -1,9 +1,13 @@
+//imports
 import react from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@material-ui/core";
 
+//------------------------------------------------------------------------------------
+// material ui styles
+//------------------------------------------------------------------------------------
 const useStyles = makeStyles({
   TextFieldTop: {
     marginTop: 10,
@@ -24,10 +28,16 @@ const useStyles = makeStyles({
   },
 });
 
+//------------------------------------------------------------------------------------
+// React component start
+//------------------------------------------------------------------------------------
+
 export default function General() {
   const classStyling = useStyles();
 
-  const [toggle, setToggle] = react.useState(false);
+  //------------------------------------------------------------------------------------
+  // Handling  form data
+  //------------------------------------------------------------------------------------
 
   const [formData, setFormData] = react.useState({
     firstName: "",
@@ -46,6 +56,12 @@ export default function General() {
     });
   }
 
+  //------------------------------------------------------------------------------------
+  // Handeling form saving and editing
+  //------------------------------------------------------------------------------------
+
+  const [toggle, setToggle] = react.useState(false);
+
   function btnToggle() {
     setToggle((prevState) => {
       return !prevState;
@@ -59,6 +75,10 @@ export default function General() {
   const styletogg = {
     display: toggle === true ? "block" : "none",
   };
+
+  //------------------------------------------------------------------------------------
+  // Jsx returned, form textfields and save/edit button
+  //------------------------------------------------------------------------------------
 
   return (
     <div className="general">
@@ -174,3 +194,7 @@ export default function General() {
     </div>
   );
 }
+
+//------------------------------------------------------------------------------------
+// React component ends
+//------------------------------------------------------------------------------------
