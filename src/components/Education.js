@@ -5,6 +5,10 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@material-ui/core";
 
+//---------------------------------------------------------------------------------------------
+// material ui styles
+//---------------------------------------------------------------------------------------------
+
 const useStyles = makeStyles({
   TextFieldTop: {
     marginTop: 10,
@@ -27,7 +31,7 @@ export default function Education() {
   const classStyles = useStyles();
 
   //---------------------------------------------------------------------------------------------
-  //handle form data
+  // handle form data
   //---------------------------------------------------------------------------------------------
 
   const [formDataEducation, setFormDataEducation] = React.useState({
@@ -48,7 +52,7 @@ export default function Education() {
   }
 
   //---------------------------------------------------------------------------------------------
-  //handle save functionality
+  // handle save functionality
   //---------------------------------------------------------------------------------------------
 
   //state to handle the
@@ -69,7 +73,7 @@ export default function Education() {
   };
 
   //---------------------------------------------------------------------------------------------
-  //handle Delete functionality
+  // handle Delete functionality
   //---------------------------------------------------------------------------------------------
 
   const [deleteBtn, setDeleteBtn] = React.useState(true);
@@ -79,7 +83,7 @@ export default function Education() {
   }
 
   //---------------------------------------------------------------------------------------------
-  //Jsx
+  // Jsx returned, create form and display of information
   //---------------------------------------------------------------------------------------------
 
   return (
@@ -188,3 +192,7 @@ export default function Education() {
     </main>
   );
 }
+
+//---------------------------------------------------------------------------------------------
+// End of component
+//---------------------------------------------------------------------------------------------
