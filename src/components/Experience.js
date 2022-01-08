@@ -6,27 +6,42 @@ import TextareaAutosize from "@mui/material/TextareaAutosize";
 import Typography from "@mui/material/Typography";
 import { makeStyles } from "@material-ui/core";
 import { red } from "@mui/material/colors";
+import { flexbox } from "@mui/system";
+
+//---------------------------------------------------------------------------------------------
+// material ui styles
+//---------------------------------------------------------------------------------------------
 
 const useStyles = makeStyles({
-  textfieldTop: {
-    marginRight: 20,
+  TextFieldTop: {
+    marginTop: 10,
+  },
+
+  textFieldBottom: {
     marginTop: 20,
+  },
+  cvText: {
+    display: "block",
+    fontSize: 20,
+    marginTop: 10,
+  },
+  cvTextBold: {
+    fontWeight: "bold",
   },
 
   textArea: {
-    display: "block",
-    marginTop: 20,
-  },
-  type: {
-    display: "block",
+    display: "flex",
+    justifyContent: "center",
+    margin: 10,
   },
 });
 
 export default function Experience() {
+  //invoke useStyles hook
   const classes = useStyles();
 
   //---------------------------------------------------------------------------------------------
-  //handle form data
+  // handle form data
   //---------------------------------------------------------------------------------------------
 
   const [formExperience, setFormExperience] = React.useState({
@@ -46,7 +61,7 @@ export default function Experience() {
       };
     });
   }
-
+  console.log(formExperience.roleDetails);
   //---------------------------------------------------------------------------------------------
   // handle delete functionality
   //---------------------------------------------------------------------------------------------
@@ -60,7 +75,7 @@ export default function Experience() {
   }
 
   //---------------------------------------------------------------------------------------------
-  //handle saving the data and editing it
+  // handle saving the data and editing it
   //---------------------------------------------------------------------------------------------
 
   const [saveBtn, setSaveBtn] = React.useState(false); //state fpr saving or editing component
@@ -72,12 +87,12 @@ export default function Experience() {
   }
 
   const hideStyle = {
-    //object used for storing css to hide the form
+    // object used for storing css to hide the form
     display: saveBtn === true ? "none" : " block",
   };
 
   const revealStyle = {
-    //object used to store css to hide the entered data
+    // object used to store css to hide the entered data
     display: saveBtn === true ? "block" : "none",
   };
   //---------------------------------------------------------------------------------------------
@@ -89,59 +104,63 @@ export default function Experience() {
       {deleteBtn && (
         <form>
           <div style={hideStyle}>
-            <TextField
-              color="primary"
-              focused
-              label="Company name"
-              type="text"
-              placeholder="enter name of company"
-              name="CompanyName"
-              value={formExperience.CompanyName}
-              onChange={handleFormChange}
-              className={classes.textfieldTop}
-            />
-            <TextField
-              color="primary"
-              focused
-              label="Position of title"
-              type="text"
-              placeholder="enter title "
-              name="positionTitle"
-              value={formExperience.positionTitle}
-              onChange={handleFormChange}
-              className={classes.textfieldTop}
-            />
-            <TextField
-              color="primary"
-              focused
-              label="start date"
-              type="date"
-              placeholder="enter start date"
-              name="startDate"
-              value={formExperience.startDate}
-              onChange={handleFormChange}
-              className={classes.textfieldTop}
-            />
-            <TextField
-              color="primary"
-              focused
-              label="end date"
-              type="date"
-              placeholder="enter finishing date "
-              name="endDate"
-              value={formExperience.endDate}
-              onChange={handleFormChange}
-              className={classes.textfieldTop}
-            />
-            <TextareaAutosize
-              aria-label="empty textarea"
-              placeholder="enter details of your role"
-              style={{ width: 200, height: 100 }}
-              name=" roleDetails"
-              value={formExperience.roleDetails}
-              onChange={handleFormChange}
-              className={classes.textArea}
-            />
+            <div className={classes.TextFieldTop}>
+              <TextField
+                color="primary"
+                focused
+                label="Company name"
+                type="text"
+                placeholder="enter name of company"
+                name="CompanyName"
+                value={formExperience.CompanyName}
+                onChange={handleFormChange}
+                style={{ marginRight: 75 }}
+              />
+              <TextField
+                color="primary"
+                focused
+                label="Position of title"
+                type="text"
+                placeholder="enter title "
+                name="positionTitle"
+                value={formExperience.positionTitle}
+                onChange={handleFormChange}
+              />
+            </div>
+
+            <div className={classes.textFieldBottom}>
+              <TextField
+                color="primary"
+                focused
+                label="start date"
+                type="date"
+                placeholder="enter start date"
+                name="startDate"
+                value={formExperience.startDate}
+                onChange={handleFormChange}
+                style={{ marginRight: 105 }}
+              />
+              <TextField
+                color="primary"
+                focused
+                label="end date"
+                type="date"
+                placeholder="enter finishing date "
+                name="endDate"
+                value={formExperience.endDate}
+                onChange={handleFormChange}
+              />
+            </div>
+            <div className={classes.textArea}>
+              <TextareaAutosize
+                placeholder="enter details of your role"
+                style={{ width: 200, height: 100 }}
+                name="roleDetails"
+                value={formExperience.roleDetails}
+                onChange={handleFormChange}
+                className={classes.textArea}
+              />
+            </div>
           </div>
 
           <Button
@@ -165,18 +184,39 @@ export default function Experience() {
       {/* conditional rendering, saved form displayed   */}
       {deleteBtn && (
         <section style={revealStyle}>
-          <Typography variant="p">
-            Company name:{formExperience.CompanyName}
+          <Typography variant="p" className={classes.cvText}>
+            <Typography variant="p" className={classes.cvTextBold}>
+              Company Name:{" "}
+            </Typography>{" "}
+            {formExperience.CompanyName}
           </Typography>
-          <Typography variant="p">
-            Position title:{formExperience.positionTitle}
+
+          <Typography variant="p" className={classes.cvText}>
+            <Typography variant="p" className={classes.cvTextBold}>
+              Position Title:{" "}
+            </Typography>{" "}
+            {formExperience.positionTitle}
           </Typography>
-          <Typography variant="p">
-            startDate:{formExperience.startDate}
+
+          <Typography variant="p" className={classes.cvText}>
+            <Typography variant="p" className={classes.cvTextBold}>
+              From:{" "}
+            </Typography>{" "}
+            {formExperience.startDate}
           </Typography>
-          <Typography variant="p">endDate:{formExperience.endDate}</Typography>
-          <Typography variant="p">
-            roleDetails:{formExperience.roleDetails}
+
+          <Typography variant="p" className={classes.cvText}>
+            <Typography variant="p" className={classes.cvTextBold}>
+              To:{" "}
+            </Typography>{" "}
+            {formExperience.endDate}
+          </Typography>
+
+          <Typography variant="p" className={classes.cvText}>
+            <Typography variant="p" className={classes.cvTextBold}>
+              Details of my role:{" "}
+            </Typography>{" "}
+            {formExperience.roleDetails}
           </Typography>
         </section>
       )}
