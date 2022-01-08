@@ -45,34 +45,41 @@ function App() {
   // JSX returned, call components and export component
   //----------------------------------------------------------------------------------------------------------
   return (
-    <main className="container">
-      <div>
-        <General />
-        <div className="education-header">
+    <div className="cv-wrapper">
+      <main className="container">
+        <div>
+          <General />
+          <div className="education-header">
+            <Typography
+              variant="h1"
+              style={{ fontSize: 40, marginBottom: 20, textAlign: "center" }}
+            >
+              Education
+            </Typography>
+            <Button
+              variant="outlined"
+              size="large"
+              onClick={addEducationInfo}
+              style={{ marginBottom: 20 }}
+            >
+              Add
+            </Button>
+          </div>
+          {educationComp}
+
           <Typography
             variant="h1"
             style={{ fontSize: 40, marginBottom: 20, textAlign: "center" }}
           >
-            Education
+            Experience
           </Typography>
-          <Button
-            variant="outlined"
-            size="large"
-            onClick={addEducationInfo}
-            style={{ marginBottom: 20 }}
-          >
+          <Button variant="outlined" size="large" onClick={addExperiance}>
             Add
           </Button>
+          {expierenceComp}
         </div>
-        {educationComp}
-
-        <h1>Experience</h1>
-        <Button variant="outlined" size="large" onClick={addExperiance}>
-          Add
-        </Button>
-        {expierenceComp}
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
 

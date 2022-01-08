@@ -27,7 +27,9 @@ const useStyles = makeStyles({
   },
 });
 
+// start of the Education component
 export default function Education() {
+  // invoke the useStyles hook
   const classStyles = useStyles();
 
   //---------------------------------------------------------------------------------------------

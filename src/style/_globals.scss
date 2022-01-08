@@ -2,35 +2,13 @@
   box-sizing: border-box;
 }
 
-// .general {
-//   display: flex;
-//   justify-content: center;
-//   margin-top: 5%;
-// }
-
-// .education {
-//   display: flex;
-//   justify-content: center;
-//   margin-top: 5%;
-// }
-
-// .education-card {
-//   display: flex;
-//   justify-content: center;
-//   margin-top: 5%;
-
-//   &-top-fields {
-//     margin-bottom: 3%;
-//   }
-// }
-
-// .education-header {
-//   display: flex;
-//   justify-content: center;
-//   margin-top: 5%;
-// }
+.cv-wrapper {
+  width: 50%;
+  margin: auto;
+}
 
 .container {
   display: flex;
   justify-content: center;
+  border: 1px solid black;
 }

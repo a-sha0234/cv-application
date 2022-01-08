@@ -81,7 +81,7 @@ export default function General() {
   //------------------------------------------------------------------------------------
 
   return (
-    <div className="general">
+    <section>
       <form>
         <div style={style}>
           <div className={classStyling.TextFieldTop}>
@@ -149,7 +149,7 @@ export default function General() {
         </div>
       </form>
 
-      <div className="formInfo" style={styletogg}>
+      <div style={styletogg}>
         <Typography
           variant="h1"
           style={{ fontSize: 40, marginBottom: 20, textAlign: "center" }}
@@ -191,7 +191,7 @@ export default function General() {
           Edit
         </Button>
       </div>
-    </div>
+    </section>
   );
 }
 
