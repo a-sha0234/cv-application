@@ -6,4 +6,4 @@ I had read about how different frameworks and librarys can make code a lot bette
 learn react 
 ## what i learnt in this project
 
-In this project I picked up the basic idea of functional components, structure 
+In this project I picked up the basic idea of functional components, props, states, form handeling and component structure 
