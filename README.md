@@ -1,7 +1,7 @@
 # Cv application creator
 
 ## The project
-This project allows a user to fill in details about themselves eg: work experience, generinal information etc  
+This project allows a user to fill in details about themselves eg: work experience, general information etc  
 
 ## Goals
 My initial goal was practice some basic react skills that I learnt as this was my very first react project. I also wanted to <br/>
