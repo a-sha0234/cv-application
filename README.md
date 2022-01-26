@@ -33,6 +33,7 @@ This site showcases some of the projects I have already I have made and allows t
 ## Features <a name="features-paragraph"></a>
 1) add information 
 2) delete information 
+3) edit information 
 
 ## Screenshots <a name="screenshot"></a>
 
